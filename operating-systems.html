@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HackProof Notes | Operating Systems</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
+
+    header {
+      padding: 40px;
+      text-align: center;
+      background: radial-gradient(circle at top, #020617, #000);
+      border-bottom: 1px solid #164e63;
+    }
+
+    header h1 {
+      color: #22d3ee;
+      font-size: 2.6rem;
+      text-shadow: 0 0 15px #22d3ee;
+    }
+
+    header p {
+      color: #94a3b8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav a {
+      color: #22d3ee;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    section {
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 40px;
+      background: linear-gradient(180deg, #020617, #000);
+    }
+
+    .main-title {
+      text-align: center;
+      font-size: 2.4rem;
+      color: #22d3ee;
+      margin-bottom: 70px;
+      text-shadow: 0 0 12px rgba(34,211,238,0.8);
+    }
+
+    .os-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #38bdf8;
+      margin: 60px 0 35px;
+      text-shadow: 0 0 10px rgba(56,189,248,0.6);
+    }
+
+    .os-title::after {
+      content: "";
+      display: block;
+      width: 120px;
+      height: 3px;
+      margin: 16px auto 0;
+      background: linear-gradient(to right, transparent, #38bdf8, transparent);
+    }
+
+    .topic-block {
+      padding: 30px;
+      border-left: 5px solid #38bdf8;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #020617, #000);
+    }
+
+    .sub-topic {
+      font-size: 1.3rem;
+      color: #a5f3fc;
+      margin-bottom: 10px;
+      padding-left: 12px;
+      border-left: 4px solid #22d3ee;
+      text-shadow: 0 0 6px rgba(34,211,238,0.5);
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    .divider {
+      margin: 40px 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #22d3ee, transparent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      margin-top: 40px;
+    }
+    .diagram-img {
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 25px auto;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>HackProof Notes</h1>
+  <p>Operating Systems | Blue Team Knowledge Base</p>
+</header>
+
+<nav>
+  <strong>📘 Knowledge Base</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="networking.html">Networking</a>
+    <a href="operating-systems.html">Operating Systems</a>
+  </div>
+</nav>
+
+<div class="container">
+<section>
+
+  <h2 class="main-title">Operating Systems</h2>
+
+  <h2 class="os-title">Windows</h2>
+  <div class="topic-block">
+
+    <h3 class="sub-topic">Event Viewer :</h3>
+    <p>A built-in Windows tool used to view system logs.</p>
+    <p>Helps troubleshoot errors, warnings, crashes, and security events.</p>
+    <img src="windows-event-viewer.png" class="diagram-img">
+
+     alt="Windows Event Viewer Logs" 
+     class="diagram-img">
+
+    <p>Logs are divided into:</p>
+    <ul>
+      <li>Application – Software-related issues.</li>
+      <li>System – OS and hardware events.</li>
+      <li>Security – Login attempts, audits, policy changes.</li>
+    </ul>
+
+    <p>Each event includes:</p>
+    <ul>
+      <li>Event ID</li>
+      <li>Source</li>
+      <li>Severity (Information, Warning, Error, Critical)</li>
+    </ul>
+
+    <p>Use cases :</p>
+    <ul>
+      <li>Diagnosing system crashes (BSOD)</li>
+      <li>Investigating failed logins</li>
+      <li>Tracking software or driver failures</li>
+    </ul>
+
+    <hr class="divider">
+
+    <h3 class="sub-topic">Registry :</h3>
+    <p>A central hierarchical database storing Windows configuration settings.</p>
+    <img src="windows-registry.png" alt="Windows Registry Editor" class="diagram-img">
+
+ 
+     alt="Windows Registry Editor" 
+     class="diagram-img">
+
+    <p>Contains settings for:</p>
+    <ul>
+      <li>Hardware</li>
+      <li>Installed software</li>
+      <li>User preferences</li>
+      <li>System policies</li>
+    </ul>
+
+    <p>Important Registry hives:</p>
+    <ul>
+      <li>HKEY_LOCAL_MACHINE (system-wide settings)</li>
+      <li>HKEY_CURRENT_USER (current user settings)</li>
+      <li>HKEY_CLASSES_ROOT (file associations)</li>
+    </ul>
+
+  </div>
+
+  <h2 class="os-title">Linux</h2>
+  <div class="topic-block">
+
+    <h3 class="sub-topic">Logs :</h3>
+    <p>Plain text files that record system and application activity.</p>
+    <p>Stored mainly in /var/log/</p>
+    <img src="linux-logs.png" class="diagram-img">
+
+     alt="Linux Log Files in var log directory" 
+     class="diagram-img">
+
+    <p>Common log files :</p>
+    <ul>
+      <li>/var/log/syslog – General system activity</li>
+      <li>/var/log/auth.log – Authentication and sudo usage</li>
+      <li>/var/log/dmesg – Kernel messages</li>
+      <li>/var/log/boot.log – Boot process info</li>
+    </ul>
+
+    <p>Viewing logs :</p>
+    <p>cat, less, tail</p>
+
+    <hr class="divider">
+
+    <h3 class="sub-topic">Permissions :</h3>
+    <p>Linux uses a permission-based security model for files and directories.</p>
+
+    <p>Permission types:</p>
+    <ul>
+      <li>r – read</li>
+      <li>w – write</li>
+      <li>x – execute</li>
+    </ul>
+
+    <p>User categories:</p>
+    <ul>
+      <li>Owner</li>
+      <li>Group</li>
+      <li>Others</li>
+    </ul>
+
+    <p>Example:</p>
+    <p>-rwxr-xr--</p>
+
+    <ul>
+      <li>Owner: read, write, execute</li>
+      <li>Group: read, execute</li>
+      <li>Others: read only</li>
+    </ul>
+
+    <p>Commands :</p>
+    <ul>
+      <li>ls -l</li>
+      <li>chmod</li>
+      <li>chown</li>
+    </ul>
+
+  </div>
+
+</section>
+</div>
+<hr class="divider">
+
+<h2 class="os-title">Windows vs Linux (Comparison)</h2>
+
+<div class="topic-block">
+
+  <table style="width:100%; border-collapse: collapse; text-align: left;">
+    <tr style="background-color:#020617;">
+      <th style="border:1px solid #1e293b; padding:10px; color:#22d3ee;">Feature</th>
+      <th style="border:1px solid #1e293b; padding:10px; color:#22d3ee;">Windows</th>
+      <th style="border:1px solid #1e293b; padding:10px; color:#22d3ee;">Linux</th>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #1e293b; padding:10px;">Logs</td>
+      <td style="border:1px solid #1e293b; padding:10px;">Event Viewer</td>
+      <td style="border:1px solid #1e293b; padding:10px;">Text files in /var/log</td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #1e293b; padding:10px;">Config Storage</td>
+      <td style="border:1px solid #1e293b; padding:10px;">Registry</td>
+      <td style="border:1px solid #1e293b; padding:10px;">Text config files</td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #1e293b; padding:10px;">Permissions</td>
+      <td style="border:1px solid #1e293b; padding:10px;">GUI + ACL</td>
+      <td style="border:1px solid #1e293b; padding:10px;">rwx (owner/group/others)</td>
+    </tr>
+
+    <tr>
+      <td style="border:1px solid #1e293b; padding:10px;">Admin Tool</td>
+      <td style="border:1px solid #1e293b; padding:10px;">GUI-heavy</td>
+      <td style="border:1px solid #1e293b; padding:10px;">CLI-focused</td>
+    </tr>
+  </table>
+
+</div>
+<hr class="divider">
+
+<div class="reference">
+  📎 Reference Document:<br>
+  <a href="Operating Systems.pdf" target="_blank">
+    Operating Systems.pdf
+  </a>
+</div>
+<footer>
+  © 2026 HackProof Notes  
+  <br>
+  Created and maintained by
+  <span style="color:#22d3ee; font-weight:600;">
+    Liger44
+  </span>
+  <br>
+  Cyber Security Learner | Blue Team Enthusiast
+  <hr style="margin:25px auto; width:70%; border:1px solid #1e293b;">
+<p style="
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 10px;
+">
+  For any doubts, queries, or feedback, feel free to reach out via email:
+  <br>
+  <a href="mailto:ligerharry44@gmail.com"
+     style="color:#22c55e; font-weight:600; text-decoration:none;">
+     ligerharry44@gmail.com
+  </a>
+</p>
+</footer>
+</body>
+</html>

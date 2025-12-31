@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HackProof Notes | Cyber Security Knowledge Base</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
+
+    header {
+      padding: 40px;
+      text-align: center;
+      background: radial-gradient(circle at top, #020617, #000);
+      border-bottom: 1px solid #164e63;
+    }
+
+    header h1 {
+      color: #22d3ee;
+      font-size: 2.8rem;
+      text-shadow: 0 0 15px #22d3ee;
+    }
+
+    header p {
+      color: #94a3b8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav input {
+      background: transparent;
+      border: 1px solid #22d3ee;
+      color: #22d3ee;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    section {
+      margin-bottom: 50px;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 30px;
+      background: linear-gradient(180deg, #020617, #000);
+    }
+
+    h2 { color: #38bdf8; }
+    h3 { color: #a5f3fc; }
+    h4 { color: #7dd3fc; }
+
+    ul { margin-left: 20px; }
+
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+    }
+
+    .topic-title {
+      margin-top: 60px;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      font-size: 1.8rem;
+      color: #22d3ee;
+      border-bottom: 2px solid #164e63;
+      text-shadow: 0 0 8px rgba(34,211,238,0.6);
+    }
+
+    .topic-block {
+      margin-top: 30px;
+      padding: 25px;
+      background: linear-gradient(180deg, #020617, #000);
+      border-left: 5px solid #38bdf8;
+      border-radius: 10px;
+    }
+
+    .divider {
+      margin: 60px 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #22d3ee, transparent);
+    }
+
+    .reference a {
+      color: #22d3ee;
+      text-decoration: none;
+      border-bottom: 1px dashed #22d3ee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+    }
+    .main-title {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #22d3ee;
+  margin: 40px 0 60px;
+  text-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
+  position: relative;
+}
+
+/* optional glowing divider under heading */
+.main-title::after {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 3px;
+  margin: 18px auto 0;
+  background: linear-gradient(to right, transparent, #22d3ee, transparent);
+}
+.diagram-img {
+  display: block;
+  max-width: 70%;      /* Controls size */
+  height: auto;        /* Keeps clarity */
+  margin: 25px auto;   /* Centers image */
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>HackProof Notes</h1>
+  <p>Cyber Security • Networking • SOC • Blue Team Knowledge Base</p>
+</header>
+
+<nav>
+  <strong>📘 Knowledge Base</strong>
+  <input type="text" placeholder="🔍 Search (coming soon)">
+</nav>
+
+<div class="container">
+
+<section id="networking">
+ <h2 class="main-title">Networking Fundamentals</h2>
+
+  <h3>OSI Model:</h3>
+
+  <p>
+    The OSI Model is a 7-layer conceptual framework that explains how data moves from one device to another over a network.
+  </p>
+
+  <p>
+    It was standardized by the International Organization for Standardization (ISO) to help vendors and engineers design,
+    build, and troubleshoot network systems in a consistent way.
+  </p>
+  <img src="./osi-model.png" alt="OSI Model Diagram" class="diagram-img">
+
+  <h4>OSI Layers (Layer 7 → Layer 1):</h4>
+
+  <h4>Layer 1 – Physical Layer:</h4>
+  <p>Transfers raw bits (0s and 1s) over physical media.</p>
+  <p><strong>Data Unit:</strong> Bits</p>
+
+  <p><strong>Transmission Media</strong></p>
+  <ul>
+    <li>Wired:
+      <ul>
+        <li>Coaxial Cable</li>
+        <li>Fiber Optic Cable</li>
+      </ul>
+    </li>
+    <li>Wireless:
+      <ul>
+        <li>Wi-Fi (Radio Waves)</li>
+        <li>Bluetooth</li>
+        <li>Infrared</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>Physical layer transmits raw bits over physical media.</p>
+
+  <h4>Layer 2 – Data Link Layer:</h4>
+  <p>Handles framing, MAC addressing, and error detection.</p>
+  <p><strong>Data Unit:</strong> Frames</p>
+
+  <p><strong>Protocols / Standards:</strong></p>
+  <ul>
+    <li>Ethernet</li>
+    <li>ARP</li>
+    <li>PPP</li>
+  </ul>
+
+  <p><strong>Devices:</strong></p>
+  <ul>
+    <li>Switches</li>
+    <li>Network Interface Card (NIC)</li>
+  </ul>
+
+  <p>Data Link layer provides framing, MAC addressing, and error detection.</p>
+
+  <h4>Layer 3 – Network Layer:</h4>
+  <p>Handles logical addressing and routing between networks.</p>
+  <p><strong>Data Unit:</strong> Packets</p>
+
+  <p><strong>Protocols:</strong></p>
+  <ul>
+    <li>IP (IPv4 / IPv6)</li>
+    <li>ICMP</li>
+    <li>Routing protocols (OSPF, RIP, BGP)</li>
+  </ul>
+
+  <p><strong>Devices:</strong></p>
+  <ul>
+    <li>Routers</li>
+    <li>Layer 3 switches</li>
+  </ul>
+
+  <p>Network layer is responsible for logical addressing and routing.</p>
+
+  <h4>Layer 4 – Transport Layer:</h4>
+  <p>Provides end-to-end communication, flow control, segmentation, and error handling.</p>
+  <p><strong>Data Unit:</strong> Segments</p>
+
+  <p><strong>Protocols:</strong></p>
+  <ul>
+    <li>TCP (Reliable, ordered, error-checked)</li>
+    <li>UDP (Fast, unreliable)</li>
+  </ul>
+
+  <p>Transport layer provides reliable or unreliable data delivery using TCP or UDP.</p>
+
+  <h4>Layer 5 – Session Layer:</h4>
+  <ul>
+    <li>Session setup & teardown</li>
+    <li>Checkpointing</li>
+    <li>Session recovery</li>
+  </ul>
+
+  <p>Session layer establishes, manages, and terminates communication sessions.</p>
+
+  <h4>Layer 6 – Presentation Layer:</h4>
+  <ul>
+    <li>Data translation (ASCII ↔ Binary)</li>
+    <li>Encryption / Decryption</li>
+    <li>Compression</li>
+  </ul>
+
+  <p><strong>Protocols / Formats:</strong></p>
+  <ul>
+    <li>SSL / TLS</li>
+    <li>JPEG, PNG</li>
+    <li>MP3, MP4</li>
+  </ul>
+
+  <p>Presentation layer ensures data is properly formatted, encrypted, and compressed.</p>
+
+  <h4>Layer 7 – Application Layer:</h4>
+  <ul>
+    <li>HTTP / HTTPS</li>
+    <li>FTP</li>
+    <li>SMTP</li>
+    <li>DNS</li>
+    <li>SNMP</li>
+  </ul>
+
+  <p>Example:</p>
+  <ul>
+    <li>Opening a website in a browser</li>
+    <li>Sending an email</li>
+  </ul>
+
+  <p>Application layer provides network services directly to end-user applications.</p>
+  <hr class="divider">
+
+  <!-- TCP/IP -->
+  <h2 class="topic-title">TCP/IP</h2>
+  <div class="topic-block">
+  <p>
+    The TCP/IP (Transmission Control Protocol / Internet Protocol) model is a practical and
+    implementable communication model that defines how data is actually transmitted across
+    networks, and it is the foundation of the Internet.
+  </p>
+  <a href="./tcp-ip-model.png" target="_blank">
+    <img src="./tcp-ip-model.png" alt="TCP/IP Model Diagram" class="diagram-img">
+  </a>
+  <p><strong>TCP/IP HAS 4 LAYERS :</strong></p>
+  <ul>
+    <li>Application</li>
+    <li>Transport</li>
+    <li>Internet</li>
+    <li>Network Access</li>
+  </ul>
+
+  <h4>1. Application Layer (TCP/IP) :</h4>
+  <p>
+    Provides services to user applications like web browsing, email, and file transfer.
+  </p>
+
+  <p><strong>Protocols:</strong></p>
+  <ul>
+    <li>HTTP / HTTPS</li>
+    <li>FTP</li>
+    <li>SMTP</li>
+    <li>POP3 / IMAP</li>
+    <li>DNS</li>
+    <li>SNMP</li>
+  </ul>
+
+  <p>Application layer provides network services directly to end-user applications.</p>
+
+  <h4>2. Transport Layer (TCP/IP):</h4>
+  <p>
+    Provides end-to-end communication, flow control, segmentation, and error handling.
+  </p>
+
+  <p><strong>Data Unit:</strong> Segment</p>
+
+  <p><strong>Protocols:</strong></p>
+  <ul>
+    <li>TCP – Reliable, ordered, error-checked</li>
+    <li>UDP – Fast, connectionless, no guarantee</li>
+  </ul>
+
+  <p>Transport layer ensures reliable or fast data delivery using TCP or UDP.</p>
+
+  <h4>3. Internet Layer (TCP/IP):</h4>
+  <p>
+    Handles logical addressing and routing of packets.
+  </p>
+
+  <p><strong>Data Unit:</strong> Packet</p>
+
+  <p><strong>Protocols:</strong></p>
+  <ul>
+    <li>IP (IPv4 / IPv6)</li>
+    <li>ICMP</li>
+    <li>IPsec</li>
+  </ul>
+
+  <p>Internet layer handles logical addressing and routing using IP.</p>
+
+  <h4>4. Network Access Layer (TCP/IP) :</h4>
+  <p>
+    Defines how data is physically transmitted, including framing, MAC addressing, and signals.
+  </p>
+
+  <p><strong>Data Units:</strong> Frame → Bits</p>
+
+  <p><strong>Technologies / Media:</strong></p>
+  <ul>
+    <li>Ethernet</li>
+    <li>ARP</li>
+    <li>Wi-Fi</li>
+    <li>Cables (UTP, Fiber)</li>
+    <li>MAC Address</li>
+  </ul>
+
+  <p>Network Access layer handles physical transmission and MAC addressing.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- VPN -->
+  <h2 class="topic-title">VPN</h2>
+  <div class="topic-block">
+
+  <p>
+    A VPN is a secure communication technology that creates an encrypted tunnel
+    over a public network (like the Internet) to securely transmit data between
+    users and networks.
+  </p>
+
+  <p>
+    A VPN is a secure tunnel on the Internet that keeps your data private and hidden.
+  </p>
+
+  <h4>What VPN Does</h4>
+  <ul>
+    <li>Encrypts data</li>
+    <li>Hides IP address</li>
+    <li>Secures communication over public networks</li>
+    <li>Provides remote access</li>
+  </ul>
+
+  <h4>VPN Protocol Examples</h4>
+  <ul>
+    <li>IPsec</li>
+    <li>SSL / TLS</li>
+    <li>L2TP</li>
+    <li>OpenVPN</li>
+    <li>WireGuard</li>
+  </ul>
+
+  <p>
+    A VPN securely encrypts data and provides private communication over public networks.
+  </p>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- FIREWALL -->
+  <h2 class="topic-title">Firewall</h2>
+  <div class="topic-block">
+ <p>
+    A Firewall is a network security device or software that monitors, filters,
+    and controls incoming and outgoing network traffic based on predefined
+    security rules.
+  </p>
+
+  <p>
+    Firewall can also show configuration details and system logs.
+  </p>
+
+  <h4>What Firewall Does:</h4>
+  <ul>
+    <li>Allows trusted traffic</li>
+    <li>Blocks malicious traffic</li>
+    <li>Enforces security policies</li>
+    <li>Protects internal network</li>
+  </ul>
+
+  <h4>How Firewall Works:</h4>
+  <p>
+    Traffic → Firewall Rules → Allow / Block
+  </p>
+
+  <h4>Firewalls are used by both network and security teams:</h4>
+
+  <strong>Network Team:</strong>
+  <ul>
+    <li>Troubleshoots connectivity and network issues</li>
+    <li>Checks allowed/blocked traffic</li>
+    <li>They Will trouble shoot the issues within the internet.</li>
+  </ul>
+
+  <strong>Security Team:</strong>
+  <ul>
+    <li>Monitors traffic for threats and attacks</li>
+    <li>Analyzes logs, alerts, and incidents.</li>
+    <li>We can monitor the traffic across the organization network.</li>
+  </ul>
+
+  <h4>TYPES OF FIREWALLS:</h4>
+
+  <strong>Host-Based Firewall</strong>
+  <ul>
+    <li>Installed on individual devices (like laptops, servers, desktops).</li>
+    <li>Controls incoming & outgoing packets for that single host.</li>
+    <li>
+      Useful for protecting devices inside the network (where a network firewall
+      can’t see everything).
+    </li>
+    <li>Example: Windows Defender Firewall.</li>
+  </ul>
+
+  <strong>Network-Based Firewall</strong>
+  <ul>
+    <li>Installed at the network boundary (router, dedicated firewall device).</li>
+    <li>Filters all traffic entering or leaving the entire network.</li>
+    <li>Protects multiple devices inside the internal network.</li>
+    <li>Example: Cisco ASA, Palo Alto Networks firewall.</li>
+  </ul>
+
+  <p><strong>Simple Formula:</strong></p>
+  <ul>
+    <li>Host-based firewall = Guard standing at each house’s door.</li>
+    <li>Network-based firewall = Guard standing at the main gate of the whole colony.</li>
+  </ul>
+
+  <h4>Firewall Types</h4>
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>Type</th>
+      <th>Meaning</th>
+    </tr>
+    <tr>
+      <td>Packet Filtering</td>
+      <td>Checks IP & port</td>
+    </tr>
+    <tr>
+      <td>Stateful Firewall</td>
+      <td>Tracks sessions</td>
+    </tr>
+    <tr>
+      <td>Proxy Firewall</td>
+      <td>Acts as middleman</td>
+    </tr>
+    <tr>
+      <td>Next-Gen Firewall (NGFW)</td>
+      <td>Deep inspection, IDS/IPS</td>
+    </tr>
+  </table>
+
+  <hr>
+  </div>
+
+  <hr class="divider">
+
+  <!-- IDS / IPS -->
+  <h2 class="topic-title">IDS & IPS</h2>
+  <div class="topic-block">
+<p>
+    IDS monitors network traffic and detects suspicious or malicious activity,
+    then raises alerts.
+  </p>
+
+  <h4>Key Points:</h4>
+  <ul>
+    <li>Works like a security camera.</li>
+    <li>
+      Only detects and alerts when it sees suspicious or malicious activity and
+      also detects the vernurability and gives an alert.
+    </li>
+    <li>It does not block the attack — just reports it.</li>
+  </ul>
+
+  <p><strong>Example:</strong></p>
+  <p>Multiple wrong login attempts → Alert sent to admin</p>
+
+  <p><strong>Formula:</strong> IDS = Detects & Reports</p>
+
+  <h4>IPS – Intrusion Prevention System:</h4>
+  <p>
+    IPS detects malicious activity and takes action to stop it.
+  </p>
+
+  <h4>Key Points:</h4>
+  <ul>
+    <li>Works like a security guard.</li>
+    <li>Not only detects but also takes action (blocks, drops, or stops the malicious traffic).</li>
+    <li>Prevents the attack from reaching the system.</li>
+  </ul>
+
+  <p><strong>Example:</strong></p>
+  <p>Multiple wrong logins → IP blocked automatically</p>
+
+  <p><strong>Formula:</strong> IPS = Detects & Blocks</p>
+
+  <h4>Types of Detection in IDS:</h4>
+
+  <strong>Signature-Based Detection:</strong>
+  <ul>
+    <li>They are already known activities OR known patterns within the internet.</li>
+    <li>
+      Compares traffic against a internet or database of known attack patterns (signatures).
+    </li>
+    <li>Good at detecting known threats, but cannot detect new/unknown attacks.</li>
+    <li>
+      Example: Detecting a virus because its signature is already in the database.
+    </li>
+  </ul>
+
+  <strong>Anomaly-Based Detection:</strong>
+  <ul>
+    <li>They are not known or this patterns are not in the internet.</li>
+    <li>
+      Builds a baseline of normal behavior (traffic, user actions, etc.) and raises
+      alerts when something unusual happens.
+    </li>
+    <li>Can detect new, unknown, or zero-day attacks.</li>
+    <li>But may sometimes raise false alarms (false positives).</li>
+  </ul>
+
+  <hr>
+
+  </div>
+
+  <hr class="divider">
+
+  <!-- PORTS & PROTOCOLS -->
+  <h2 class="topic-title">Ports & Protocols</h2>
+  <div class="topic-block">
+ <p>
+    A protocol is a set of rules and standards that defines how data is formatted,
+    transmitted, received, and interpreted between network devices.
+  </p>
+
+  <p>
+    A protocol defines the rules for communication between network devices.
+  </p>
+
+  <h4>Internet Protocol (IP) Address:</h4>
+  <p>
+    An IP address is a unique numerical identifier assigned to a device on a network
+    to enable communication.
+  </p>
+
+  <p>
+    An IP address uniquely identifies a device on a network.
+  </p>
+
+  <h4>Types of IP Addresses:</h4>
+
+  <strong>Private IP Address:</strong>
+  <ul>
+    <li>Used inside a local or private network.</li>
+    <li>Not routable on the Internet.</li>
+    <li>Not globally unique.</li>
+    <li>Can be reused in different private networks.</li>
+  </ul>
+
+  <h4>Private IP Address Ranges:</h4>
+  <table border="1" cellpadding="6">
+    <tr><th>Class</th><th>Range</th></tr>
+    <tr><td>Class A</td><td>10.0.0.0 – 10.255.255.255</td></tr>
+    <tr><td>Class B</td><td>172.16.0.0 – 172.31.255.255</td></tr>
+    <tr><td>Class C</td><td>192.168.0.0 – 192.168.255.255</td></tr>
+  </table>
+
+  <p>Classful addressing exists historically, but CIDR is used today.</p>
+
+  <p><strong>Check Your Private IP Address:</strong></p>
+  <ul>
+    <li>Windows → ipconfig</li>
+    <li>Linux / macOS → ifconfig or ip addr</li>
+  </ul>
+
+  <strong>Public IP Address:</strong>
+  <ul>
+    <li>Used on the Internet.</li>
+    <li>Globally unique.</li>
+    <li>Assigned by an Internet Service Provider (ISP).</li>
+    <li>Identifies your network to the outside world.</li>
+  </ul>
+
+  <p><strong>Check Your Public IP Address:</strong></p>
+  <p>Search in browser: whatismyip.com or what is my IP</p>
+
+  <h4>Common Internet Protocols:</h4>
+  <table border="1" cellpadding="6">
+    <tr><th>Protocol</th><th>Purpose</th></tr>
+    <tr><td>HTTP / HTTPS</td><td>Web communication</td></tr>
+    <tr><td>FTP / SFTP</td><td>File transfer</td></tr>
+    <tr><td>SMTP / IMAP / POP3</td><td>Email communication</td></tr>
+    <tr><td>DNS</td><td>Converts domain names to IP addresses</td></tr>
+    <tr><td>TCP / UDP / IP</td><td>Core data delivery</td></tr>
+  </table>
+
+  <h4>What is a Port?</h4>
+  <p>
+    A port is a logical numerical identifier used to identify a protocol or service
+    running on a device.
+  </p>
+
+  <h4>Types of Port Numbers:</h4>
+  <table border="1" cellpadding="6">
+    <tr><th>Port Range</th><th>Name</th><th>Meaning</th></tr>
+    <tr><td>0–1023</td><td>Well-known ports</td><td>Standard services</td></tr>
+    <tr><td>1024–49151</td><td>Registered ports</td><td>Applications</td></tr>
+    <tr><td>49152–65535</td><td>Dynamic ports</td><td>Temporary use</td></tr>
+  </table>
+
+  <h4>Most Important Ports & Protocols:</h4>
+  <table border="1" cellpadding="6">
+    <tr>
+      <th>Protocol</th><th>Port</th><th>Transport</th><th>Purpose</th>
+    </tr>
+    <tr><td>HTTP</td><td>80</td><td>TCP</td><td>Web traffic</td></tr>
+    <tr><td>HTTPS</td><td>443</td><td>TCP</td><td>Secure web</td></tr>
+    <tr><td>FTP</td><td>21</td><td>TCP</td><td>File transfer</td></tr>
+    <tr><td>SSH</td><td>22</td><td>TCP</td><td>Secure remote login</td></tr>
+    <tr><td>Telnet</td><td>23</td><td>TCP</td><td>Remote login (insecure)</td></tr>
+    <tr><td>SMTP</td><td>25</td><td>TCP</td><td>Send email</td></tr>
+    <tr><td>DNS</td><td>53</td><td>TCP/UDP</td><td>Name resolution</td></tr>
+    <tr><td>POP3</td><td>110</td><td>TCP</td><td>Receive email</td></tr>
+    <tr><td>IMAP</td><td>143</td><td>TCP</td><td>Receive email</td></tr>
+    <tr><td>SNMP</td><td>161</td><td>UDP</td><td>Network monitoring</td></tr>
+    <tr><td>TFTP</td><td>69</td><td>UDP</td><td>Lightweight file transfer</td></tr>
+  </table>
+
+  <div class="reference">
+    📎 Reference Documents:<br>
+    <a href="Networking fundmantals.pdf" target="_blank">Networking fundmantals.pdf</a><br>
+  </div>
+
+</section>
+  <div class="reference">
+    📎 Reference Documents:<br>
+    <a href="Networking fundmantals.pdf" target="_blank">Networking fundmantals.pdf</a><br>
+  </div>
+
+</section>
+
+</div>
+<footer>
+  © 2026 HackProof Notes  
+  <br>
+  Created and maintained by
+  <span style="color:#22d3ee; font-weight:600;">
+    Liger44
+  </span>
+  <br>
+  Cyber Security Learner | Blue Team Enthusiast
+  <hr style="margin:25px auto; width:70%; border:1px solid #1e293b;">
+<p style="
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 10px;
+">
+  For any doubts, queries, or feedback, feel free to reach out via email:
+  <br>
+  <a href="mailto:ligerharry44@gmail.com"
+     style="color:#22c55e; font-weight:600; text-decoration:none;">
+     ligerharry44@gmail.com
+  </a>
+</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HackProof Notes | Cyber Security Knowledge Base</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Hacker Font -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
+
+    header {
+      padding: 60px 40px;
+      text-align: center;
+      background: radial-gradient(circle at top, #020617, #000);
+      border-bottom: 1px solid #164e63;
+    }
+
+header h1 {
+  color: #ef4444; /* red */
+  text-shadow: 0 0 18px rgba(239,68,68,0.8);
+}
+    header p {
+      color: #94a3b8;
+      max-width: 900px;
+      margin: 15px auto 0;
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      background: #020617;
+      z-index: 100;
+    }
+
+    nav a {
+      color: #22d3ee;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.3rem;
+      color: #38bdf8;
+      margin-bottom: 60px;
+      text-shadow: 0 0 10px rgba(56,189,248,0.7);
+    }
+
+    .category {
+      margin-bottom: 70px;
+    }
+
+    .category h3 {
+      color: #a5f3fc;
+      margin-bottom: 20px;
+      border-left: 4px solid #22d3ee;
+      padding-left: 12px;
+    }
+
+    .topic-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .topic-list li {
+      margin-bottom: 12px;
+    }
+
+    .topic-list a {
+      color: #cbd5f5;
+      text-decoration: none;
+      border-bottom: 1px dashed transparent;
+    }
+
+    .topic-list a:hover {
+      color: #22d3ee;
+      border-bottom: 1px dashed #22d3ee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+    }
+    .practice-lab-section {
+  margin-top: 120px;
+  padding: 50px;
+  border: 2px solid #ef4444;
+  border-radius: 14px;
+  background: radial-gradient(circle at top, #2a0f0f, #020617);
+  box-shadow: 0 0 25px rgba(239,68,68,0.3);
+}
+.practice-lab-section h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #ef4444;
+  text-shadow: 0 0 18px rgba(239,68,68,0.9);
+  margin-bottom: 30px;
+}
+.practice-lab-section p {
+  text-align: center;
+  color: #fca5a5;
+  max-width: 850px;
+  margin: 0 auto 40px;
+  font-size: 1.05rem;
+}
+.practice-lab-link {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  padding: 18px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ef4444, #b91c1c);
+  box-shadow: 0 0 20px rgba(239,68,68,0.6);
+}
+.practice-lab-link:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 30px rgba(239,68,68,0.9);
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>HackProof Notes</h1>
+<p style="color:#22c55e; text-shadow:0 0 10px rgba(34,197,94,0.5);">
+  A personal cyber security knowledge base covering networking fundamentals,
+  operating systems, SOC concepts, SIEM, and blue team learning.
+  Notes are added gradually, topic by topic, with clear explanations
+  and real-world defensive security perspective.
+</p>
+
+  </p>
+</header>
+<nav>
+  <strong>👨‍💻 HackProof Vault</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="networking.html">Networking</a>
+    <a href="operating-systems.html">Operating Systems</a>
+    <a href="WebFundamentals.html">Web Fundamentals</a>
+    <a href="practice-lab.html">Practice Lab</a>
+  </div>
+</nav>
+<h2 class="section-title"
+    style="
+      font-size: 2.0rem;
+      font-weight: 600;
+      color: #48c51a;
+      text-shadow: 0 0 15px rgba(31, 126, 66, 0.8);
+      letter-spacing: 1px;
+    ">
+  🏆 HackProof Learning Hub
+</h2>
+
+</h2>
+  <!-- NETWORKING CATEGORY -->
+  <div class="category">
+    <h3>🌐 Networking Fundamentals</h3>
+    <ul class="topic-list">
+      <li><a href="networking.html">Networking Fundamentals (OSI, TCP/IP, VPN, Firewalls)</a></li>
+    </ul>
+  </div>
+
+  <!-- OPERATING SYSTEMS CATEGORY -->
+  <div class="category">
+    <h3>🖥️ Operating Systems</h3>
+    <ul class="topic-list">
+      <li><a href="operating-systems.html">Windows & Linux (Logs, Registry, Permissions)</a></li>
+    </ul>
+  </div>
+
+ <!-- WEB FUNDAMENTALS -->
+<div class="category">
+  <h3>🧩 Web Fundamentals</h3>
+  <ul class="topic-list">
+    <li>
+      <a href="WebFundamentals.html">
+        HTML, DNS, HTTP/HTTPS, Web Login & Authentication
+      </a>
+    </li>
+  </ul>
+</div>
+ <!-- FUTURE EXPANSION -->
+<!-- SOC & BLUE TEAM -->
+<div class="category">
+  <h3>🛡️ Blue Team (Coming Soon)</h3>
+  <ul class="topic-list">
+    <li>SOC Fundamentals</li>
+    <li>SIEM Tools</li>
+    <li>Log Analysis</li>
+    <li>MITRE ATT&CK</li>
+    <li>Incident Response</li>
+  </ul>
+</div>
+<!-- RED TEAM -->
+<div class="category">
+  <h3 style="color:#de674f;">☠️ Red Team (Coming Soon)</h3>
+  <ul class="topic-list">
+    <li>Red Team Fundamentals</li>
+    <li>Reconnaissance Techniques</li>
+    <li>Web Application Attacks</li>
+    <li>Privilege Escalation</li>
+    <li>Lateral Movement</li>
+    <li>Post-Exploitation</li>
+  </ul>
+</div>
+<div class="category">
+<!-- PRACTICE LABS - SEPARATE & HIGHLIGHTED -->
+<div class="practice-lab-section">
+  <h2>🧪 PRACTICE LABS (HANDS-ON)</h2>
+  <p>
+    This section is dedicated to hands-on cyber security practice.
+    All labs focus on understanding real-world attacks from a
+    defensive and ethical perspective.
+  </p>
+
+  <a href="practice-lab.html" class="practice-lab-link">
+    Enter Practice Lab Environment →
+  </a>
+
+  <p style="margin-top:25px; font-size:0.9rem; color:#fecaca;">
+    ⚠️ Practice only in environments you own or are authorized to test.
+  </p>
+</div>
+<footer>
+  © 2026 HackProof Notes  
+  <br>
+  Created and maintained by
+  <span style="color:#22d3ee; font-weight:600;">
+    Liger44
+  </span>
+  <br>
+  Cyber Security Learner | Blue Team Enthusiast
+  <hr style="margin:25px auto; width:70%; border:1px solid #1e293b;">
+<p style="
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 10px;
+">
+  For any doubts, queries, or feedback, feel free to reach out via email:
+  <br>
+  <a href="mailto:ligerharry44@gmail.com"
+     style="color:#22c55e; font-weight:600; text-decoration:none;">
+     ligerharry44@gmail.com
+  </a>
+</p>
+</footer>
+</p>
+</body>
+</html>

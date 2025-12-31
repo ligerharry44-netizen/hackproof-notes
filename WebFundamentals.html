@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HackProof Notes | Web Fundamentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.9;
+    }
+
+    header {
+      padding: 50px;
+      text-align: center;
+      background: radial-gradient(circle at top, #020617, #000);
+      border-bottom: 1px solid #164e63;
+    }
+
+    header h1 {
+      color: #22d3ee;
+      font-size: 2.7rem;
+      text-shadow: 0 0 15px #22d3ee;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    nav a {
+      color: #22d3ee;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 50px 40px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      padding: 40px;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #020617, #000);
+    }
+
+    .topic-title {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #38bdf8;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px rgba(56,189,248,0.7);
+    }
+
+    h3 {
+      color: #a5f3fc;
+      margin-top: 30px;
+    }
+
+    ul {
+      margin-left: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Web Fundamentals</h1>
+  <p>DNS • HTTP • HTTPS • How Websites Work</p>
+</header>
+
+<nav>
+  <strong>📘 Knowledge Base</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="networking.html">Networking</a>
+    <a href="operating-systems.html">Operating Systems</a>
+    <a href="WebFundamentals.html">Web Fundamentals</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ================= DNS ================= -->
+<section>
+  <h2 class="topic-title">DNS (Domain Name System)</h2>
+
+  <p>
+    DNS stands for Domain Name System. It acts like the phonebook of the Internet.
+    When you type a website name into your browser, your computer does not understand
+    the human-readable domain name. DNS translates domain names into IP addresses.
+  </p>
+
+  <h3>DNS Components</h3>
+  <ul>
+    <li>Domain Name</li>
+    <li>IP Address</li>
+    <li>DNS Resolver</li>
+    <li>Root DNS Server</li>
+    <li>TLD Server</li>
+    <li>Authoritative Name Server</li>
+  </ul>
+
+  <h3>DNS Resolution Process</h3>
+  <ul>
+    <li>User enters domain name in browser</li>
+    <li>Browser sends request to DNS resolver</li>
+    <li>Resolver queries Root DNS server</li>
+    <li>Root server directs to TLD server</li>
+    <li>TLD server directs to authoritative server</li>
+    <li>Authoritative server responds with IP address</li>
+    <li>Browser connects to the web server</li>
+  </ul>
+
+  <h3>Types of DNS Records</h3>
+  <ul>
+    <li>A Record – Maps domain to IPv4 address</li>
+    <li>AAAA Record – Maps domain to IPv6 address</li>
+    <li>CNAME – Alias of another domain</li>
+    <li>MX Record – Mail exchange server</li>
+    <li>NS Record – Name server record</li>
+    <li>TXT Record – Used for verification and security</li>
+  </ul>
+</section>
+
+<!-- ================= HTTP ================= -->
+<section>
+  <h2 class="topic-title">HTTP (HyperText Transfer Protocol)</h2>
+
+  <p>
+    HTTP stands for HyperText Transfer Protocol.
+    It is used for communication between a web browser and a web server.
+    HTTP is stateless, meaning each request is independent.
+  </p>
+
+  <h3>HTTP Methods</h3>
+  <ul>
+    <li>GET – Retrieve data</li>
+    <li>POST – Submit data</li>
+    <li>PUT – Update data</li>
+    <li>DELETE – Remove data</li>
+    <li>HEAD – Retrieve headers only</li>
+  </ul>
+
+  <h3>HTTP Status Codes</h3>
+  <ul>
+    <li>1xx – Informational</li>
+    <li>2xx – Success</li>
+    <li>3xx – Redirection</li>
+    <li>4xx – Client Error</li>
+    <li>5xx – Server Error</li>
+  </ul>
+
+  <h3>Common HTTP Status Codes</h3>
+  <ul>
+    <li>200 OK</li>
+    <li>301 Moved Permanently</li>
+    <li>302 Found</li>
+    <li>400 Bad Request</li>
+    <li>401 Unauthorized</li>
+    <li>403 Forbidden</li>
+    <li>404 Not Found</li>
+    <li>500 Internal Server Error</li>
+  </ul>
+</section>
+
+<!-- ================= HTTPS ================= -->
+<section>
+  <h2 class="topic-title">HTTPS</h2>
+
+  <p>
+    HTTPS is HTTP with encryption. It uses SSL/TLS to encrypt communication
+    between the client and the server. HTTPS prevents eavesdropping and
+    man-in-the-middle attacks.
+  </p>
+</section>
+
+<!-- ================= HOW WEBSITES WORK ================= -->
+<section>
+  <h2 class="topic-title">How Websites Work</h2>
+
+  <ul>
+    <li>User types a URL in the browser</li>
+    <li>DNS resolves domain name to IP address</li>
+    <li>Browser sends HTTP request</li>
+    <li>Server processes the request</li>
+    <li>Server sends HTTP response</li>
+    <li>Browser renders HTML, CSS, and JavaScript</li>
+  </ul>
+
+  <h3>Client Side</h3>
+  <ul>
+    <li>Browser</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <h3>Server Side</h3>
+  <ul>
+    <li>Web Server (Apache, Nginx)</li>
+    <li>Backend logic</li>
+    <li>Database</li>
+  </ul>
+
+  <h3>Security Concepts</h3>
+  <ul>
+    <li>Authentication</li>
+    <li>Authorization</li>
+    <li>Sessions</li>
+    <li>Cookies</li>
+    <li>Web attacks (XSS, SQL Injection)</li>
+  </ul>
+    <div class="reference">
+    📎 Reference Documents:<br>
+    <a href="WEB FUNDAMENTALS.docx" target="_blank">WEB FUNDAMENTALS.docx</a><br>
+  </div>
+
+</section>
+
+</div>
+<footer>
+  © 2026 HackProof Notes  
+  <br>
+  Created and maintained by
+  <span style="color:#22d3ee; font-weight:600;">
+    Liger44
+  </span>
+  <br>
+  Cyber Security Learner | Blue Team Enthusiast
+  <hr style="margin:25px auto; width:70%; border:1px solid #1e293b;">
+<p style="
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 10px;
+">
+  For any doubts, queries, or feedback, feel free to reach out via email:
+  <br>
+  <a href="mailto:ligerharry44@gmail.com"
+     style="color:#22c55e; font-weight:600; text-decoration:none;">
+     ligerharry44@gmail.com
+  </a>
+</p>
+</footer>
+</body>
+</html>
