@@ -91,7 +91,6 @@
 <nav class="top-nav">
   <div class="nav-left">
     <a href="index.html" class="brand">
-      <img src="favicon.svg" alt="HackProof Icon">
       <span>HackProof Notes</span>
     </a>
     <a href="index.html">Notes</a>
@@ -108,9 +107,7 @@
 </div>
 </div>
 </nav>
-</nav>
-<div class="container">
-
+<div class="container" id="protected-content" style="display:none;">
 <!-- ================= DNS ================= -->
 <section>
   <h2 class="topic-title">DNS (Domain Name System)</h2>
@@ -232,7 +229,6 @@
     <li>Backend logic</li>
     <li>Database</li>
   </ul>
-
   <h3>Security Concepts</h3>
   <ul>
     <li>Authentication</li>
@@ -245,9 +241,7 @@
     📎 Reference Documents:<br>
     <a href="WEB FUNDAMENTALS.docx" target="_blank">WEB FUNDAMENTALS.docx</a><br>
   </div>
-
 </section>
-
 </div>
 <footer>
   © 2026 HackProof Notes  
@@ -285,16 +279,19 @@
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+
+  // ✅ THIS WAS MISSING
   const content = document.getElementById("protected-content");
 
   onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      // 🔒 Not logged in → go to login page
+    if (user) {
+      // 🔓 Logged in → show content
+      content.style.display = "block";
+    } else {
+      // 🔒 Not logged in → redirect
       window.location.href = "login.html";
     }
-    // ✅ Logged in → page loads normally (content unlocked)
   });
 </script>
 </body>
 </html>
-
