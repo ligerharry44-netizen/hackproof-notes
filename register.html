@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | HackProof Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #020617, #000);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .register-container {
+      width: 100%;
+      max-width: 420px;
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 36px;
+      box-shadow: 0 0 40px rgba(34,197,94,0.15);
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .brand img {
+      width: 40px;
+      margin-bottom: 10px;
+    }
+
+    .brand h1 {
+      font-size: 1.4rem;
+      margin: 0;
+      color: #22c55e;
+    }
+
+    .brand p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 6px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    label {
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    input {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 8px;
+      padding: 12px;
+      color: #e5e7eb;
+      font-size: 0.9rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #22c55e;
+      box-shadow: 0 0 0 1px #22c55e;
+    }
+
+    .register-btn {
+      margin-top: 10px;
+      padding: 12px;
+      background: #22c55e;
+      border: none;
+      border-radius: 8px;
+      color: #020617;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .register-btn:hover {
+      background: #16a34a;
+    }
+
+    .extra {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    .extra a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+
+    .extra a:hover {
+      color: #22c55e;
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="register-container">
+    <div class="brand">
+      <img src="favicon.svg" alt="HackProof Logo">
+      <h1>Create Account</h1>
+      <p>Join HackProof Notes securely</p>
+    </div>
+
+    <form onsubmit="event.preventDefault(); registerUser();">
+      <div>
+        <label for="email">Email address</label>
+        <input type="email" id="email" placeholder="  " required>
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="  " required>
+      </div>
+
+      <button class="register-btn" type="submit">Create Account</button>
+    </form>
+
+    <div class="extra">
+      Already have an account?
+      <a href="login.html">Login</a>
+    </div>
+
+    <footer>
+      Ethical cybersecurity learning only
+    </footer>
+  </div>
+
+  <!-- Firebase Signup Logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyASUWJWXQXCYE9LpQJUKqz8z-371Y3yNUQ",
+      authDomain: "hackproof-7d14d.firebaseapp.com",
+      projectId: "hackproof-7d14d",
+      storageBucket: "hackproof-7d14d.firebasestorage.app",
+      messagingSenderId: "256480294548",
+      appId: "1:256480294548:web:66c82a236fc21f602f2681"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    window.registerUser = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          alert("Account created successfully. Please login.");
+          window.location.href = "login.html";
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    };
+  </script>
+
+</body>
+</html>
