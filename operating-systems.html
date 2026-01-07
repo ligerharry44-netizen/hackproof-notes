@@ -153,8 +153,7 @@
 </div>
 </div>
 </nav>
-</nav>
-<div class="container">
+<div class="container" id="protected-content" style="display:none;">
 <section>
   <h2 class="main-title">Operating Systems</h2>
   <h2 class="os-title">Windows</h2>
@@ -162,8 +161,7 @@
     <h3 class="sub-topic">Event Viewer :</h3>
     <p>A built-in Windows tool used to view system logs.</p>
     <p>Helps troubleshoot errors, warnings, crashes, and security events.</p>
-    <img src="windows-event-viewer.png" class="diagram-img">
-
+    <img src="windows-event-viewer.png" alt="Windows Event Viewer Logs" class="diagram-img">
      alt="Windows Event Viewer Logs" 
      class="diagram-img">
 
@@ -360,12 +358,16 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
+  const content = document.getElementById("protected-content");
+
   onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      // 🔒 Not logged in → go to login page
+    if (user) {
+      // ✅ Logged in → unlock content
+      content.style.display = "block";
+    } else {
+      // 🔒 Not logged in → redirect
       window.location.href = "login.html";
     }
-    // ✅ Logged in → page loads normally (content unlocked)
   });
 </script>
 </body>
