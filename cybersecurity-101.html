@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HackProof Notes | Cyber Security 101</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      background: #020617;
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
+
+    header {
+      padding: 50px 30px;
+      text-align: center;
+      border-bottom: 1px solid #1e293b;
+      background: radial-gradient(circle at top, #020617, #000);
+    }
+
+    header h1 {
+      color: #22c55e;
+      text-shadow: 0 0 14px rgba(34,197,94,0.7);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-bottom: 1px solid #1e293b;
+      background: #020617;
+    }
+
+    nav a {
+      color: #22d3ee;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 30px;
+    }
+
+    .section {
+      margin-bottom: 60px;
+      padding: 35px;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #020617, #000);
+    }
+
+    h2 { color: #38bdf8; }
+    h3 { color: #a5f3fc; }
+    h4 { color: #7dd3fc; }
+
+    ul, ol {
+      margin-left: 25px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+      border: 1px solid #1e293b;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid #1e293b;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cyber Security 101</h1>
+</header>
+
+<nav>
+  <strong>🧠 HackProof Notes</strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="networking.html">Networking</a>
+    <a href="operating-systems.html">Operating Systems</a>
+    <a href="WebFundamentals.html">Web Fundamentals</a>
+    <a href="cybersecurity-101.html">Cybersecurity 101</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- WHAT IS CYBERSECURITY -->
+<div class="section">
+<h2>What Is Cybersecurity :</h2>
+<p>
+Cybersecurity is the practice of protecting computers, networks, servers, mobile devices, and data from attacks, damage, or unauthorized access.
+</p>
+</div>
+
+<!-- CIA TRIAD -->
+<div class="section">
+<h2>Core Pillars of Cybersecurity :</h2>
+<img src="images/cia-triad.png" alt="CIA Triad Diagram">
+
+<h3>Confidentiality</h3>
+<p>Confidentiality means protecting information from unauthorized access. Only authorized users should be able to see or use the data.</p>
+
+<h4>Why Confidentiality is Important :</h4>
+<ul>
+  <li>Prevents data leaks</li>
+  <li>Protects personal and sensitive information</li>
+  <li>Avoids identity theft and fraud</li>
+</ul>
+
+<h4>How Confidentiality is Achieved :</h4>
+<ul>
+  <li>Passwords</li>
+  <li>Encryption</li>
+  <li>Access control</li>
+  <li>Biometrics (fingerprint, face ID)</li>
+</ul>
+
+<h3>Integrity</h3>
+<p>Integrity ensures that data remains accurate, complete, and unchanged unless modified by an authorized person.</p>
+
+<h4>Why Integrity is Important :</h4>
+<ul>
+  <li>Prevents unauthorized modification</li>
+  <li>Maintains trust in data</li>
+</ul>
+
+<h4>Real-Life Examples :</h4>
+<ul>
+  <li>Exam marks should not be altered</li>
+  <li>Bank balance must remain correct</li>
+  <li>Legal documents must stay original</li>
+</ul>
+
+<h4>How Integrity is Maintained :</h4>
+<ul>
+  <li>File hashes</li>
+  <li>Checksums</li>
+  <li>Digital signatures</li>
+</ul>
+
+<h3>Availability</h3>
+<p>Availability ensures that data and systems are accessible to authorized users whenever they are needed.</p>
+
+<h4>Real-Life Examples :</h4>
+<ul>
+  <li>Banking system working 24/7</li>
+  <li>Company website not crashing</li>
+  <li>Hospital systems available during emergencies</li>
+</ul>
+
+<h4>How Availability is Ensured :</h4>
+<ul>
+  <li>Regular backups</li>
+  <li>DDoS protection</li>
+  <li>Load balancing</li>
+</ul>
+</div>
+
+<!-- INFORMATION ASSURANCE -->
+<div class="section">
+<h2>Information Assurance (IA)</h2>
+<p>Ensures information is trustworthy throughout its life cycle.</p>
+
+<ul>
+  <li>Protecting data</li>
+  <li>Managing risks</li>
+  <li>Ensuring reliability</li>
+</ul>
+
+<h4>IA Includes :</h4>
+<ul>
+  <li>Confidentiality</li>
+  <li>Integrity</li>
+  <li>Availability</li>
+  <li>Authentication</li>
+  <li>Non-repudiation</li>
+</ul>
+</div>
+
+<!-- IAAA -->
+<div class="section">
+<h2>IAAA (Security Framework)</h2>
+<p>Identification, Authentication, Authorization, Accounting</p>
+
+<h3>Identification</h3>
+<p>Who are you? User claims identity. No verification yet.</p>
+<ul>
+  <li>Username</li>
+  <li>Email ID</li>
+  <li>Employee ID</li>
+</ul>
+
+<h3>Authentication</h3>
+<ul>
+  <li>Password</li>
+  <li>OTP</li>
+  <li>Fingerprint</li>
+  <li>Face ID</li>
+</ul>
+
+<h3>Authorization</h3>
+<ul>
+  <li>Student → View marks</li>
+  <li>Teacher → Edit marks</li>
+  <li>Admin → Full access</li>
+</ul>
+
+<h3>Accounting (Auditing)</h3>
+<ul>
+  <li>Login time</li>
+  <li>Files accessed</li>
+  <li>Changes made</li>
+</ul>
+</div>
+
+<!-- ACCESS CONTROL -->
+<div class="section">
+<h2>Access Control</h2>
+<img src="images/access-control.png" alt="Access Control Diagram">
+
+<ul>
+  <li>Mandatory Access Control (MAC)</li>
+  <li>Discretionary Access Control (DAC)</li>
+  <li>Role-Based Access Control (RBAC)</li>
+  <li>Attribute-Based Access Control (ABAC)</li>
+</ul>
+
+<h4>Access Control Components :</h4>
+<ul>
+  <li>Policies</li>
+  <li>Rules</li>
+  <li>Permissions</li>
+  <li>Access enforcement</li>
+</ul>
+</div>
+
+<!-- RISK MANAGEMENT -->
+<div class="section">
+<h2>Risk Management</h2>
+<img src="images/risk-management.png" alt="Risk Management Cycle">
+
+<p>Risk = Threat × Vulnerability × Impact</p>
+
+<ul>
+  <li>Identify assets</li>
+  <li>Identify threats</li>
+  <li>Identify vulnerabilities</li>
+  <li>Assess risk</li>
+  <li>Apply controls</li>
+  <li>Monitor continuously</li>
+</ul>
+</div>
+
+<!-- PRIVACY -->
+<div class="section">
+<h2>Privacy</h2>
+<img src="images/privacy.png" alt="Privacy Infographic">
+
+<h4>Personal Data Examples :</h4>
+<ul>
+  <li>Name</li>
+  <li>Phone number</li>
+  <li>Aadhaar / SSN</li>
+  <li>Email</li>
+  <li>Location</li>
+  <li>Biometric data</li>
+</ul>
+
+<h4>Privacy Principles :</h4>
+<ul>
+  <li>Data minimization</li>
+  <li>Consent</li>
+  <li>Transparency</li>
+  <li>Purpose limitation</li>
+  <li>Data protection</li>
+</ul>
+</div>
+
+<!-- COMMON CYBER THREATS -->
+<div class="section">
+<h2>Common Cyber Threats</h2>
+<img src="images/cyber-threats.png" alt="Cyber Threats Diagram">
+
+<h3>Malware</h3>
+<ul>
+  <li>Virus</li>
+  <li>Worm</li>
+  <li>Trojan</li>
+  <li>Ransomware</li>
+</ul>
+
+<h3>Phishing</h3>
+<ul>
+  <li>Email phishing</li>
+  <li>SMS phishing (Smishing)</li>
+  <li>Voice phishing (Vishing)</li>
+</ul>
+
+<h3>Hacking</h3>
+<ul>
+  <li>Weak passwords</li>
+  <li>Software vulnerabilities</li>
+  <li>Unpatched systems</li>
+  <li>Social engineering</li>
+</ul>
+
+<h3>DDoS Attacks</h3>
+<ul>
+  <li>Server overload</li>
+  <li>Website downtime</li>
+  <li>Revenue loss</li>
+</ul>
+
+<h3>Insider Threats</h3>
+<ul>
+  <li>Malicious employees</li>
+  <li>Careless employees</li>
+  <li>Former employees</li>
+</ul>
+</div>
+
+<!-- MITM -->
+<div class="section">
+<h2>Man-in-the-Middle (MITM) Attack</h2>
+<img src="images/mitm-attack.png" alt="MITM Attack in Action">
+
+<h4>How MITM Attack Works :</h4>
+<ol>
+  <li>User sends data</li>
+  <li>Attacker intercepts data</li>
+  <li>Attacker forwards data</li>
+  <li>Neither user nor server knows</li>
+</ol>
+
+<h4>Common Types :</h4>
+<ul>
+  <li>Wi-Fi eavesdropping</li>
+  <li>Session hijacking</li>
+  <li>ARP spoofing</li>
+  <li>DNS spoofing</li>
+  <li>SSL stripping</li>
+</ul>
+
+<h4>Impact :</h4>
+<ul>
+  <li>Password theft</li>
+  <li>Bank fraud</li>
+  <li>Identity theft</li>
+  <li>Data manipulation</li>
+</ul>
+
+<h4>Prevention :</h4>
+<ul>
+  <li>Use HTTPS</li>
+  <li>Avoid public Wi-Fi</li>
+  <li>Use VPN</li>
+  <li>Enable encryption</li>
+  <li>Keep systems updated</li>
+</ul>
+</div>
+
+<!-- ZERO DAY -->
+<div class="section">
+<h2>Zero-Day Attack</h2>
+<p>
+A Zero-Day attack exploits a software vulnerability that is unknown to the software developer and for which no patch or fix exists yet.
+</p>
+<h4>Why it is called Zero-Day :</h4>
+<ul>
+  <li>Developers have zero days to fix the vulnerability</li>
+  <li>Attackers exploit it before anyone knows</li>
+</ul>
+<h4>How it Works :</h4>
+<ol>
+  <li>Unknown vulnerability exists</li>
+  <li>Attacker discovers flaw</li>
+  <li>Exploits it secretly</li>
+  <li>Damage occurs before fix</li>
+</ol>
+<h4>Why it is Dangerous :</h4>
+<ul>
+  <li>No immediate defense</li>
+  <li>Antivirus may not detect it</li>
+  <li>High success rate</li>
+  <li>Massive damage</li>
+</ul>
+<h4>Prevention :</h4>
+<ul>
+  <li>Regular updates</li>
+  <li>IDS / IPS</li>
+  <li>Behavior-based tools</li>
+  <li>Network monitoring</li>
+  <li>Least-privilege access</li>
+</ul>
+</div>
+<!-- DOMAINS -->
+<div class="section">
+<h2>Cybersecurity Domains</h2>
+<h3>Network Security</h3>
+<p>Network Security focuses on protecting computer networks and the data moving through them from unauthorized access, attacks, and misuse.
+</p>
+<ul>
+  <li>Firewalls</li>
+  <li>IDS / IPS</li>
+  <li>VPN</li>
+  <li>Network monitoring</li>
+</ul>
+<h3>Application Security</h3>
+<p>Application Security involves protecting software and applications from vulnerabilities and attacks throughout their lifecycle.
+</p>
+<ul>
+  <li>SQL Injection</li>
+  <li>XSS</li>
+  <li>Broken authentication</li>
+</ul>
+<h3>Information Security</h3>
+<p>Information Security (InfoSec) focuses on protecting data and information from unauthorized access, modification, or destruction</p>
+<ul>
+  <li>Encryption</li>
+  <li>Access control</li>
+  <li>Backup and recovery</li>
+</ul>
+<h3>Cloud Security</h3>
+<p>Cloud Security refers to protecting data, applications, and services stored in cloud environments.
+</p>
+<ul>
+  <li>IAM</li>
+  <li>Encryption</li>
+  <li>Secure configurations</li>
+  <li>Continuous monitoring</li>
+</ul>
+<h3>Endpoint Security</h3>
+<p>Endpoint Security protects end-user devices that connect to a network.</p>
+<ul>
+  <li>Antivirus</li>
+  <li>Device encryption</li>
+  <li>Regular updates</li>
+  <li>EDR</li>
+</ul>
+</div>
+</div>
+<footer>
+  © 2026 HackProof Notes  
+  <br>
+   Created and maintained by
+  <span style="color:#22d3ee; font-weight:600;">
+    Liger44
+  </span>
+  <br>
+<p style="font-size:0.75rem; opacity:0.7;">
+  Built for ethical cyber security learning only.
+</p>
+  <br><br>
+  Questions or feedback?
+  <a href="mailto:ligerharry44@gmail.com">ligerharry44@gmail.com</a>
+</footer>
+</body>
+</html>
