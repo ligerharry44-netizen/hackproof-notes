@@ -128,31 +128,37 @@
 }
   </style>
 </head>
-
 <body>
-
 <header>
   <h1>HackProof Notes</h1>
   <p>Operating Systems | Blue Team Knowledge Base</p>
 </header>
-
-<nav>
-  <strong>📘 Knowledge Base</strong>
-  <div>
-    <a href="index.html">Home</a>
-    <a href="networking.html">Networking</a>
-    <a href="operating-systems.html">Operating Systems</a>
+<nav class="top-nav">
+  <div class="nav-left">
+    <a href="index.html" class="brand">
+      <img src="favicon.svg" alt="HackProof Icon">
+      <span>HackProof Notes</span>
+    </a>
+    <a href="index.html">Notes</a>
+    <a href="roadmap.html">Roadmap</a>
+    <a href="practice-lab.html">Labs</a>
   </div>
+<div class="nav-right">
+<div class="nav-user" id="nav-user">
+  <a href="login.html" id="login-link" class="avatar">👤 Login</a>
+  <div class="user-dropdown" id="user-dropdown" style="display:none;">
+    <span class="user-email" id="user-email"></span>
+    <button onclick="logoutUser()">Sign out</button>
+  </div>
+</div>
+</div>
 </nav>
-
+</nav>
 <div class="container">
 <section>
-
   <h2 class="main-title">Operating Systems</h2>
-
   <h2 class="os-title">Windows</h2>
   <div class="topic-block">
-
     <h3 class="sub-topic">Event Viewer :</h3>
     <p>A built-in Windows tool used to view system logs.</p>
     <p>Helps troubleshoot errors, warnings, crashes, and security events.</p>
@@ -325,7 +331,7 @@
     Liger44
   </span>
   <br>
-  Cyber Security Learner
+  Cyber Security Learner | Blue Team Enthusiast
   <hr style="margin:25px auto; width:70%; border:1px solid #1e293b;">
 <p style="
   font-size: 0.95rem;
@@ -340,6 +346,27 @@
   </a>
 </p>
 </footer>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyASUWJWXQXCYE9LpQJUKqz8z-371Y3yNUQ",
+    authDomain: "hackproof-7d14d.firebaseapp.com",
+    projectId: "hackproof-7d14d",
+    appId: "1:256480294548:web:66c82a236fc21f602f2681"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      // 🔒 Not logged in → go to login page
+      window.location.href = "login.html";
+    }
+    // ✅ Logged in → page loads normally (content unlocked)
+  });
+</script>
 </body>
 </html>
-
