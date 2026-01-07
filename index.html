@@ -203,16 +203,14 @@
       <img src="favicon.svg" alt="HackProof Icon">
       <span>HackProof Notes</span>
     </a>
-
     <a href="index.html">Notes</a>
     <a href="roadmap.html">Roadmap</a>
     <a href="practice-lab.html">Labs</a>
   </div>
-  <div class="nav-right">
-    <div class="profile">
-      <span class="email"></span>
-      <span class="avatar">👤</span>
-    </div>
+<div class="nav-right">
+<a href="login.html" class="avatar" title="Login to HackProof">👤 Login</a>
+<span id="user-email">guest</span>
+</div>
 </nav>
 </nav>
 <div class="container">
@@ -276,5 +274,24 @@
   Questions or feedback?
   <a href="mailto:ligerharry44@gmail.com">ligerharry44@gmail.com</a>
 </footer>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyASUWJWXQXCYE9LpQJUKqz8z-371Y3yNUQ",
+    authDomain: "hackproof-7d14d.firebaseapp.com",
+    projectId: "hackproof-7d14d",
+    storageBucket: "hackproof-7d14d.firebasestorage.app",
+    messagingSenderId: "256480294548",
+    appId: "1:256480294548:web:66c82a236fc21f602f2681"
+  };
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      document.getElementById("user-email").textContent = user.email;
+    }
+  });
+</script>
 </body>
 </html>
